@@ -16,7 +16,7 @@ class SizeController extends Controller
     {
         $sizes = Size::all();
 
-        return response()->json($sizes);
+        return response()->json($sizes, 200); // HTTP status code: 200 OK
     }
 
     /**
@@ -32,7 +32,7 @@ class SizeController extends Controller
 
         $size->save();
 
-        return response()->json($size);
+        return response()->json($size, 201); // HTTP status code: 201 Created
     }
 
     /**
@@ -49,7 +49,7 @@ class SizeController extends Controller
 
         $size->save();
 
-        return response()->json($size);
+        return response()->json($size, 200); // HTTP status code: 200 OK
     }
 
     /**
@@ -63,6 +63,6 @@ class SizeController extends Controller
         $size = Size::findOrFail($id);
         $size->delete();
 
-        return response()->json;
+        return response()->json(['Delete'=> $id], 204); // HTTP status code: 204 No Content
     }
 }
