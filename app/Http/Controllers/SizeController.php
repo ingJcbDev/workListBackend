@@ -19,6 +19,18 @@ class SizeController extends Controller
         return response()->json($sizes, 200); // HTTP status code: 200 OK
     }
 
+
+    public function show($id)
+    {
+        try {
+            $size = Size::findOrFail($id);
+
+            return response()->json($size, 200);
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 404);
+        }
+    }
+
     /**
      * Store a newly created size in the database.
      *
