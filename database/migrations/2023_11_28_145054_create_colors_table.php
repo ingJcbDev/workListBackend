@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('color', function (Blueprint $table) {
-            $table->bigIncrements('color_id')->comment('ID de la tabla');
-            $table->string('description')->unique();
-            $table->string('status')->default('1')->comment('1 => Activo, 0 => Inactivo');
+            $table->bigIncrements('color_id')->comment('ID de la tabla')->nullable(false);
+            $table->string('description')->unique()->nullable(false);
+            $table->string('status')->default('1')->comment('1 => Activo, 0 => Inactivo')->nullable(false);
             $table->timestamps();
         });
     }

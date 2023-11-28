@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\ColorController;
+use App\Http\Controllers\GarmentTypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,19 @@ Route::prefix('v1')->group(function () {
     Route::get('Colors/{id}', [ColorController::class, 'show']);
     Route::put('Colors/{id}', [ColorController::class, 'update']);
     Route::delete('Colors/{id}', [ColorController::class, 'destroy']);
+});
+/**
+ * Fin Api Color
+ */
+/**
+ * Inicio Api Color
+ */
+Route::prefix('v1')->group(function () {
+    Route::get('GarmentType', [GarmentTypeController::class, 'index']);
+    Route::post('GarmentType', [GarmentTypeController::class, 'store']);
+    Route::get('GarmentType/{id}', [GarmentTypeController::class, 'show']);
+    Route::put('GarmentType/{id}', [GarmentTypeController::class, 'update']);
+    Route::delete('GarmentType/{id}', [GarmentTypeController::class, 'destroy']);
 });
 /**
  * Fin Api Color

@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sizes', function (Blueprint $table) {
-            $table->bigIncrements('size_id')->comment('ID de la tabla');
-            $table->string('size')->comment('Talla de la prenda');
-            $table->char('sw_state', 1)->nullable(false)->comment('1 => Activo, 0 => Inactivo')->default('1');
+            $table->bigIncrements('size_id')->comment('ID de la tabla')->nullable(false);
+            $table->string('size')->comment('Talla de la prenda')->nullable(false);
+            $table->char('sw_state', 1)->nullable(false)->comment('1 => Activo, 0 => Inactivo')->default('1')->nullable(false);
             $table->timestamps();
         });
     }

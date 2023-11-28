@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(SizeSeeder::class);
         $this->call(ColorSeeder::class);
+        $this->call(GarmentTypeSeeder::class);
     }
 }
