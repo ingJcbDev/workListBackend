@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\GarmentTypeController;
+use App\Http\Controllers\WorklistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,7 +50,7 @@ Route::prefix('v1')->group(function () {
  * Fin Api Color
  */
 /**
- * Inicio Api Color
+ * Inicio Api GarmentType
  */
 Route::prefix('v1')->group(function () {
     Route::get('GarmentType', [GarmentTypeController::class, 'index']);
@@ -59,5 +60,18 @@ Route::prefix('v1')->group(function () {
     Route::delete('GarmentType/{id}', [GarmentTypeController::class, 'destroy']);
 });
 /**
- * Fin Api Color
+ * Fin Api GarmentType
+ */
+/**
+ * Inicio Api WorkList
+ */
+Route::prefix('v1')->group(function () {
+    Route::get('WorkList', [WorklistController::class, 'index']);
+    Route::post('WorkList', [WorklistController::class, 'store']);
+    Route::get('WorkList/{id}', [WorklistController::class, 'show']);
+    Route::put('WorkList/{id}', [WorklistController::class, 'update']);
+    Route::delete('WorkList/{id}', [WorklistController::class, 'destroy']);
+});
+/**
+ * Fin Api WorkList
  */
